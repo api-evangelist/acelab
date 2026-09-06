@@ -1,0 +1,31 @@
+generated: '2026-09-06'
+method: probed
+source: https://docs.acelabusa.com/.well-known/oauth-authorization-server
+docs: null
+note: >-
+  The only OAuth scope Acelab publishes anywhere is the single scope advertised by the
+  authorization server backing the documentation MCP server on docs.acelabusa.com. There is no
+  scope or permissions reference page for the Acelab product API — that API answers
+  WWW-Authenticate: Bearer with no published authorization model at all. This file deliberately
+  records one scope rather than inventing a product-API scope surface.
+authorization_server: https://docs.acelabusa.com/mcp/oauth
+grant_types:
+- authorization_code
+- client_credentials
+- refresh_token
+code_challenge_methods:
+- S256
+dynamic_client_registration: true
+scope_count: 1
+scopes:
+- name: mcp:search
+  description: >-
+    Search and retrieve Acelab documentation content through the MCP server at
+    https://docs.acelabusa.com/mcp. Anonymous callers can already list and call the read-only
+    tools; this scope gates authenticated/private documentation content.
+  resource: https://docs.acelabusa.com
+x-evidence:
+  fetched: '2026-09-06'
+  url: https://docs.acelabusa.com/.well-known/oauth-authorization-server
+  http_status: 200
+  content_type: application/json

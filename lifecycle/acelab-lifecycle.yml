@@ -1,0 +1,60 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://docs.acelabusa.com/help-center/revit-integration/installing-the-revit-add-in-it-deployment-and-update-guide
+  and https://www.acelabusa.com/resources?type_equal=New+Features
+note: >-
+  Acelab publishes no API versioning policy, no deprecation policy, no Sunset/Deprecation header
+  convention (RFC 8594) and no SLA — there is no public API product for such a policy to govern.
+  What it DOES publish is a real client-side lifecycle for the Revit add-in, which is recorded
+  here because it is the only versioned, dated, supported-platform commitment on any Acelab
+  property. No StatusPage pointer is emitted: acelabusa.statuspage.io resolves but redirects to
+  Atlassian's own marketing site, and status.acelabusa.com does not resolve at all — there is no
+  Acelab status page. No Deprecation pointer is emitted either.
+api_versioning:
+  scheme: null
+  documented: false
+  note: No public API version scheme is published.
+deprecation_policy:
+  documented: false
+  sunset_header: false
+  deprecation_header: false
+status_page:
+  exists: false
+  probes:
+  - url: https://status.acelabusa.com/
+    status: 0
+    result: DNS does not resolve
+  - url: https://acelabusa.statuspage.io/
+    status: 200
+    result: >-
+      Redirects to the Atlassian Statuspage product marketing page (title "Real-Time Incident
+      Communication with Statuspage | Atlassian") — an unclaimed subdomain, not an Acelab status
+      page. Treated as absent.
+sla:
+  published: false
+client_lifecycle:
+- component: Acelab Revit Add-In
+  current_version: 0.1.485
+  released: '2026-07-24'
+  distribution: MSI installer for the initial install; user-level EXE auto-updater for subsequent updates
+  install_location: user AppData (non-admin, per Autodesk add-in guidance)
+  supported_hosts:
+  - Revit 2022
+  - Revit 2023
+  - Revit 2024
+  - Revit 2025
+  - Revit 2026
+  docs: https://docs.acelabusa.com/help-center/revit-integration/installing-the-revit-add-in-it-deployment-and-update-guide
+  note: >-
+    Updates do not trigger UAC and require no admin permission; IT can deploy the MSI via Group
+    Policy, SCCM or Intune. Guide last updated 2026-06-19 by Patricia Causey.
+release_notes:
+  url: https://www.acelabusa.com/resources?type_equal=New+Features
+  status: 200
+  dated: false
+  note: >-
+    A "What's New at Acelab" feed of product-update posts (LEED scores in schedule fields,
+    material intelligence in Revit parameters, Smart Docs, bulk project import). Titled and
+    ordered but not version-stamped, so no structured changelog artifact is derivable from it —
+    it is wired as a ChangeLog link pointer instead.

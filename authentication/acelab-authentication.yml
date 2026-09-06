@@ -1,0 +1,90 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Live HTTP probes of the Acelab production API and docs MCP host, plus the published pricing
+  page (https://www.acelabusa.com/pricing/architect-designers) and the Revit integration help
+  center. No OpenAPI securitySchemes were available to derive from — the spec is auth-gated.
+note: >-
+  Acelab publishes no authentication documentation for developers. Everything below was
+  established by observing WWW-Authenticate challenges on Acelab's own hosts and by reading the
+  end-user/pricing pages. There is no documented key-issuance flow, no developer console and no
+  token endpoint for the product API.
+schemes:
+- id: product-api-bearer
+  type: http
+  scheme: bearer
+  applies_to: https://acelab-api-prod-178528813198.us-east4.run.app/api
+  method: probed
+  evidence:
+    url: https://acelab-api-prod-178528813198.us-east4.run.app/api/notification/channel-auth
+    http_status: 401
+    www_authenticate: Bearer
+    fetched: '2026-09-06'
+  note: >-
+    The production API answers unauthenticated requests with 401 and WWW-Authenticate: Bearer.
+    How a caller obtains that bearer token is not published anywhere public; in the shipped web
+    application it is a session token minted after interactive sign-in.
+- id: swagger-basic
+  type: http
+  scheme: basic
+  applies_to: https://acelab-api-prod-178528813198.us-east4.run.app/swagger/v1/swagger.json
+  method: probed
+  evidence:
+    url: https://acelab-api-prod-178528813198.us-east4.run.app/swagger/v1/swagger.json
+    http_status: 401
+    www_authenticate: Basic
+    fetched: '2026-09-06'
+  note: >-
+    The ASP.NET Swagger surface EXISTS and is protected by HTTP Basic auth. This is the single
+    most important finding in this record: the machine-readable contract is published by the
+    server, and the only thing between the catalog and it is a credential we do not have and
+    will not attempt. Sibling paths that do not exist (/openapi.json, /api-docs, /health) return
+    404 from the same host, which is what distinguishes "gated" from "absent" here.
+- id: platform-sso
+  type: oauth2
+  applies_to: https://app.acelabusa.com/login
+  method: searched
+  providers:
+  - Microsoft
+  - Google
+  note: >-
+    "Microsoft & Google OAuth" is listed as an included permission feature on every published
+    Acelab pricing tier. This is end-user sign-in to the Material Hub application, not API
+    authorization.
+- id: enterprise-sso
+  type: saml-or-oidc
+  applies_to: https://app.acelabusa.com/login
+  method: searched
+  note: >-
+    "Custom SSO & RBAC" and "Enterprise SSO & RBAC" are listed as Enterprise-tier-only items on
+    https://www.acelabusa.com/pricing/architect-designers. The protocol is not named on the
+    public page.
+- id: docs-mcp-oauth
+  type: oauth2
+  applies_to: https://docs.acelabusa.com/mcp
+  method: probed
+  optional: true
+  issuer: https://docs.acelabusa.com/mcp/oauth
+  authorization_endpoint: https://docs.acelabusa.com/mcp/oauth/authorize
+  token_endpoint: https://docs.acelabusa.com/mcp/oauth/token
+  registration_endpoint: https://docs.acelabusa.com/mcp/oauth/register
+  grant_types:
+  - authorization_code
+  - client_credentials
+  - refresh_token
+  pkce:
+  - S256
+  scopes:
+  - mcp:search
+  evidence:
+    url: https://docs.acelabusa.com/.well-known/oauth-authorization-server
+    http_status: 200
+    fetched: '2026-09-06'
+  note: >-
+    Optional. The docs MCP server answers initialize and tools/list anonymously; this
+    authorization server exists to unlock authenticated/private documentation content. Provided
+    by the Mintlify docs platform on Acelab's host.
+gaps:
+- No published API key or token issuance flow for the product API.
+- No developer portal, API reference or authentication guide on any Acelab property.
+- Custom API integration is sold, not self-served — Enterprise tier, "Contact sales".

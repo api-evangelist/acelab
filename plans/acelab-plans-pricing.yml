@@ -1,0 +1,88 @@
+generated: '2026-09-06'
+method: searched
+source: https://www.acelabusa.com/pricing/architect-designers
+note: >-
+  Acelab publishes named plan tiers and a full feature-comparison matrix but NO prices. Pro and
+  Enterprise are quoted "by annual project volume" through sales. Two further pricing pages
+  exist for the other two audiences — /pricing/manufacturers-suppliers and
+  /pricing/owners-developers (both HTTP 200 on 2026-09-06) — and follow the same
+  named-tier-without-a-number pattern. API access is a tier feature, not a product: "Custom API
+  Integrations" and "Custom API Router" appear only in the Enterprise column.
+plan_count: 3
+currency: null
+billing_period: null
+plans:
+- name: Starter
+  slug: starter
+  price: 0
+  currency: USD
+  billing_period: null
+  public_price: true
+  included:
+  - Unlimited projects
+  - Unlimited users
+  - Material Hub database access (200,000+ products)
+  - In-platform AI search
+  - Centralized vendor management
+  - Company-wide library
+  - Project workspace and schedules
+  - Revit integration (core material and family mapping)
+  - Basic SpecPlanner
+  - Export CSV and PDF
+  - Microsoft and Google OAuth sign-in
+  api_access: false
+- name: Material Hub Pro
+  slug: pro
+  price: null
+  currency: null
+  billing_period: null
+  public_price: false
+  price_note: 'Ranges by annual project volume; "Request a demo" / see pricing chart. No number published.'
+  included:
+  - Everything in Starter
+  - Revit keynote and tag automation
+  - Sheet Spec Builder
+  - Document Builder
+  - Shared workspaces
+  - Approvals workflows
+  - Project and portfolio reports
+  - Company-wide search filters
+  - Custom role and permissions management
+  - In-SpecPlanner Copilot
+  api_access: false
+- name: Material Hub Enterprise
+  slug: enterprise
+  price: null
+  currency: null
+  billing_period: null
+  public_price: false
+  price_note: '"Contact sales". Ranges by annual project volume. No number published.'
+  included:
+  - Everything in Pro
+  - Operational carbon analysis tools
+  - Cost analysis tools
+  - Autodesk ACC360 integration
+  - Procore integration
+  - SharePoint integration
+  - Custom API Router / Custom API Integrations
+  - Enterprise SSO and RBAC
+  api_access: true
+  api_note: >-
+    This is the only tier on which any API access is offered, and it is sold rather than
+    self-served. There is no published rate card, quota, key-issuance flow or contract for it.
+add_ons:
+- name: Operational Carbon Analysis
+  price: null
+- name: Revit Advanced Search
+  price: null
+- name: Ask Ace Co-pilot in Revit
+  price: null
+- name: In-Spec Planner Copilot
+  price: null
+other_pricing_pages:
+- audience: manufacturers-suppliers
+  url: https://www.acelabusa.com/pricing/manufacturers-suppliers
+  status: 200
+- audience: owners-developers
+  url: https://www.acelabusa.com/pricing/owners-developers
+  status: 200

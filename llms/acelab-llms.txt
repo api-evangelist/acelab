@@ -1,0 +1,57 @@
+# Acelab
+
+- [AECO Help Center (127 pages)](https://docs.acelabusa.com/_llms/aeco-help-center.md): Documentation for AECO Help Center.
+- [Learning Hub (82 pages)](https://docs.acelabusa.com/_llms/learning-hub.md): Documentation for Learning Hub.
+- [Webinars (248 pages)](https://docs.acelabusa.com/_llms/webinars.md): Documentation for Webinars.
+
+## Partner Help Center
+
+- [Partner Help Center](https://docs.acelabusa.com/partner-help-center/index.md): Everything manufacturer partners need to manage their team, connect with architects, and grow their pipeline.
+
+### Getting Started
+
+- [Getting Started](https://docs.acelabusa.com/partner-help-center/getting-started/index.md): Initial setup guide for new organizations and brands
+- [Overview for Manufacturer Partners](https://docs.acelabusa.com/partner-help-center/getting-started/welcome-to-acelab-overview-for-manufacturer-partners.md): A quick map of everything the platform gives you — and how it fits together.
+- [How to Accept Your Invitation and Set Up Your Account](https://docs.acelabusa.com/partner-help-center/getting-started/how-to-accept-your-invitation-and-set-up-your-account.md): Everything you need to do before your first login — from inbox to dashboard.
+
+### Team Management
+
+- [Team Management](https://docs.acelabusa.com/partner-help-center/team-management/index.md): Manage your organization, your brands, and every teammate's access across them.
+- [Understanding Manufacturer Roles: Admin vs. Rep](https://docs.acelabusa.com/partner-help-center/team-management/understanding-manufacturer-roles-admin-vs-rep.md): Know who can do what before you start inviting your team.
+- [Understanding Your Team Dashboard](https://docs.acelabusa.com/partner-help-center/team-management/understanding-your-team-dashboard.md): Learn what's on the Team Dashboard and who can access it.
+- [How to Invite a Team Member](https://docs.acelabusa.com/partner-help-center/team-management/how-to-invite-a-team-member.md): Send an email invitation to add a new rep or admin to your manufacturer account.
+- [How to Manage Team Roles and Remove Members](https://docs.acelabusa.com/partner-help-center/team-management/how-to-manage-team-roles-and-remove-members.md): Change a member's role or remove them from your manufacturer account.
+- [Coverage Assignment Overview](https://docs.acelabusa.com/partner-help-center/team-management/coverage-assignment-overview.md): Define your sales territories and assign reps to them, so architects always know exactly who to contact.
+- [Setting Up Coverage Assignments](https://docs.acelabusa.com/partner-help-center/team-management/setting-up-coverage-assignments.md): Classify your sales territories and assign reps to them, brand by brand.
+- [Managing Coverage Assignments](https://docs.acelabusa.com/partner-help-center/team-management/managing-coverage-assignments.md): Edit territories, change rep assignments, and manage coverage right from the Teams Page.
+
+### Connections
+
+- [Connections](https://docs.acelabusa.com/partner-help-center/connections/index.md): Connect with your leads and turn them into prospects
+- [Conversations Overview](https://docs.acelabusa.com/partner-help-center/connections/conversations-overview.md): How to manage architect communications directly from the dashboard
+- [Reply by Email](https://docs.acelabusa.com/partner-help-center/connections/reply-by-email.md): On the go? Respond to architect messages directly from your inbox — no login required.
+- [Best Practices for Architect Communications](https://docs.acelabusa.com/partner-help-center/connections/best-practices.md): Strategies and tips for effective communication with architects
+- [Managing Conversation Status](https://docs.acelabusa.com/partner-help-center/connections/managing-conversation-status.md): Understand how to track and update conversation progress through different stages
+- [Troubleshooting Conversations and Email Replies](https://docs.acelabusa.com/partner-help-center/connections/troubleshooting.md): Solutions to common issues with conversations and email reply feature
+
+### Accounts and Projects
+
+- [Accounts and Projects Overview](https://docs.acelabusa.com/partner-help-center/accounts-and-projects/overview.md): Get familiar with the Accounts and Projects dashboards in Acelab Partner Portal
+- [Navigating the Accounts and Projects Dashboards](https://docs.acelabusa.com/partner-help-center/accounts-and-projects/navigating.md): Learn how to navigate and interact with the Accounts and Projects dashboards
+- [Organizing Your Accounts and Projects](https://docs.acelabusa.com/partner-help-center/accounts-and-projects/organizing.md): Learn to filter, sort, search, and organize your Accounts and Projects dashboards
+- [Using Proxy Email](https://docs.acelabusa.com/partner-help-center/accounts-and-projects/proxy-email.md): Learn about proxy email and how to set it up for your accounts
+
+### Brand and Product Pages
+
+- [Brand and Product Pages](https://docs.acelabusa.com/partner-help-center/brand-and-product-pages/index.md): Understanding your Brand Page on Material Hub
+- [Your Brand Page: What Architects See](https://docs.acelabusa.com/partner-help-center/brand-and-product-pages/your-brand-page-what-architects-see.md): Your storefront on Acelab — and how architect activity on it turns into leads.
+- [How Acelab Organizes Product Data — and Why It Matters for Your Brand](https://docs.acelabusa.com/partner-help-center/brand-and-product-pages/how-acelab-organizes-product-data-and-why-it-matters-for-your-brand.md): Acelab's taxonomy and data standards make your products easier to find, compare, and specify.
+- [Your Product Detail Page: What Architects See](https://docs.acelabusa.com/partner-help-center/brand-and-product-pages/your-product-detail-page-what-architects-see.md): A breakdown of every section on your product listing — and how architect activity on it turns into leads.
+
+> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.
+
+## Indexes
+
+- [AECO Help Center (127 pages)](https://docs.acelabusa.com/_llms/aeco-help-center.md): Documentation for AECO Help Center.
+- [Learning Hub (82 pages)](https://docs.acelabusa.com/_llms/learning-hub.md): Documentation for Learning Hub.
+- [Webinars (248 pages)](https://docs.acelabusa.com/_llms/webinars.md): Documentation for Webinars.

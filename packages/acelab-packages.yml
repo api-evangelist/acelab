@@ -1,0 +1,69 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  npm registry search + registry.npmjs.org metadata, PyPI, GitHub org acelab-usa, and the
+  Acelab Revit page https://www.acelabusa.com/revit
+note: >-
+  Acelab publishes NO first-party client SDK in any package registry. npm, PyPI, RubyGems,
+  crates.io, NuGet, Maven Central and pkg.go.dev return nothing first-party under acelab or
+  acelabusa; PyPI /pypi/acelab/json returns 404 and there is no github.com/acelab organization
+  (the real org is github.com/acelab-usa, created 2025-02-18, one public repo, a hackathon
+  project). The only first-party distributed artifact is the Autodesk Revit add-in, shipped as a
+  CDN-hosted zip/MSI from the marketing site rather than through any registry. No type: SDKs
+  pointer is emitted, because no client library exists to count.
+packages:
+- language: csharp
+  registry: cdn
+  name: Acelab Revit Add-In
+  url: https://www.acelabusa.com/revit
+  download_url: https://cdn.prod.website-files.com/69975a27432ddb9dcf949f22/6a63d1207dfb1a73ccb3bef6_AcelabRevitAddin(0.1.485).zip
+  install: Download the zip from acelabusa.com/revit and run the MSI installer; subsequent updates apply automatically via a user-level EXE updater.
+  official: true
+  version: 0.1.485
+  published: '2026-07-24'
+  note: >-
+    Version read from the pinned filename AcelabRevitAddin(0.1.485).zip; published date is the
+    CDN Last-Modified header (Fri, 24 Jul 2026 20:54:58 GMT), size 3,750,017 bytes, HTTP 200 on
+    2026-09-06. There is no registry metadata endpoint for a Webflow-CDN distribution, so those
+    two headers are the only currency evidence available. A second, older, unpinned build is
+    still linked from the same page as "AcelabRevitAddin (21).zip". Compatible with Revit
+    2022-2026 per the IT deployment guide.
+- language: javascript
+  registry: npm
+  name: acelab-mcp-architect
+  url: https://www.npmjs.com/package/acelab-mcp-architect
+  install: npx acelab-mcp-architect
+  official: false
+  version: 0.1.3
+  published: '2025-09-20'
+  note: >-
+    An MCP server wrapping the Acelab product API, published by npm user "mayankacelab".
+    Marked official:false — package.json repository and homepage are still the unfilled
+    template github.com/your-username/acelab-mcp-architect, no acelabusa.com page links to it,
+    and its documented default base URL https://api.acelab.com is a domain Acelab does not own.
+    Almost certainly employee side work rather than a supported release.
+- language: javascript
+  registry: npm
+  name: acelab-ui
+  url: https://www.npmjs.com/package/acelab-ui
+  official: false
+  version: null
+  published: null
+  note: >-
+    Name collision only. Published by npm user "ace.ramos.developer" and unrelated to this
+    company; version/published deliberately left null rather than recorded as Acelab currency.
+registries_checked:
+- registry: npm
+  result: no first-party package
+- registry: pypi
+  result: 404 on /pypi/acelab/json
+- registry: rubygems
+  result: no first-party package
+- registry: crates.io
+  result: no first-party package
+- registry: nuget
+  result: no first-party package
+- registry: maven-central
+  result: no first-party package
+- registry: pkg.go.dev
+  result: no first-party package

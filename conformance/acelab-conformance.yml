@@ -1,0 +1,86 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Fetched discovery documents and a live MCP handshake on docs.acelabusa.com, plus
+  https://docs.acelabusa.com/robots.txt and https://docs.acelabusa.com/llms.txt
+note: >-
+  Every entry below was established from a document Acelab's own hosts served on 2026-09-06.
+  Nothing is asserted from marketing prose. Acelab publishes no certifications, no trust center
+  and no compliance page, so no type: Compliance pointer is emitted. The AECO / building-product
+  market does have domain standards a specification platform could declare — IFC, bSDD, BIM
+  Collaboration Format, OmniClass/MasterFormat/UniFormat, EPD/ISO 14025 environmental product
+  declarations — and Acelab declares NONE of them in any machine-readable contract. That is a
+  recorded absence, not a penalty: the platform speaks Revit families and keynotes, and its
+  contract is not public.
+conformance:
+- id: rfc8414
+  name: OAuth 2.0 Authorization Server Metadata
+  conforms: true
+  evidence: https://docs.acelabusa.com/.well-known/oauth-authorization-server
+  detail: >-
+    Serves a valid metadata document with issuer, authorization_endpoint, token_endpoint,
+    registration_endpoint, response_types_supported, grant_types_supported and
+    code_challenge_methods_supported.
+- id: rfc9728
+  name: OAuth 2.0 Protected Resource Metadata
+  conforms: true
+  evidence: https://docs.acelabusa.com/.well-known/oauth-protected-resource
+  detail: 'Serves {"resource":"https://docs.acelabusa.com","authorization_servers":["https://docs.acelabusa.com/mcp/oauth"]}.'
+- id: rfc7591
+  name: OAuth 2.0 Dynamic Client Registration
+  conforms: true
+  evidence: https://docs.acelabusa.com/.well-known/oauth-authorization-server
+  detail: registration_endpoint https://docs.acelabusa.com/mcp/oauth/register is advertised.
+- id: rfc7636
+  name: PKCE
+  conforms: true
+  evidence: https://docs.acelabusa.com/.well-known/oauth-authorization-server
+  detail: code_challenge_methods_supported ["S256"].
+- id: mcp-2025-06-18
+  name: Model Context Protocol 2025-06-18
+  conforms: true
+  evidence: https://docs.acelabusa.com/mcp
+  detail: >-
+    initialize returned protocolVersion 2025-06-18 with capabilities {tools:{listChanged:true},
+    resources:{listChanged:true}} over streamable HTTP; tools/list returned three tools with
+    JSON Schema inputSchema and MCP tool annotations (readOnlyHint / destructiveHint /
+    idempotentHint / openWorldHint).
+- id: llmstxt
+  name: llms.txt
+  conforms: true
+  evidence: https://docs.acelabusa.com/llms.txt
+  detail: 6,386-byte llms.txt indexing the help center, learning hub, webinars and partner help center.
+- id: content-signals
+  name: Cloudflare Content Signals Policy
+  conforms: true
+  evidence: https://docs.acelabusa.com/robots.txt
+  detail: 'Content-Signal: ai-train=yes, search=yes, ai-input=yes on the documentation host.'
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: https://acelab-api-prod-178528813198.us-east4.run.app/swagger/v1/swagger.json
+  detail: >-
+    A Swagger/OpenAPI document is served at the conventional ASP.NET path but answers 401 with
+    WWW-Authenticate: Basic. Recorded as not-conforming for the public catalog because the
+    contract cannot be read, NOT because it is absent.
+- id: rfc9457
+  name: Problem Details for HTTP APIs
+  conforms: false
+  evidence: https://acelab-api-prod-178528813198.us-east4.run.app/api
+  detail: Unverifiable — error bodies are zero-length behind the 401; no error reference is published.
+- id: rfc9116
+  name: security.txt
+  conforms: false
+  evidence: https://www.acelabusa.com/.well-known/security.txt
+  detail: 404 on every Acelab host probed.
+domain_standards:
+- id: ifc
+  name: Industry Foundation Classes (ISO 16739)
+  declared: false
+  evidence: null
+  detail: Not named in any machine-readable Acelab contract or discovery document.
+- id: bsdd
+  name: buildingSMART Data Dictionary
+  declared: false
+  evidence: null
+  detail: Not named in any machine-readable Acelab contract or discovery document.

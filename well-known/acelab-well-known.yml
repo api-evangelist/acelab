@@ -1,0 +1,202 @@
+generated: '2026-09-06'
+method: probed
+source: direct HTTPS probes of the named /.well-known/ path list on every host in this record
+note: >-
+  Five hosts probed on 2026-09-06. Only docs.acelabusa.com (Mintlify-hosted documentation
+  platform) serves any discovery document. That host answers 200 with an HTML shell for every
+  unknown path — the negative control below proves it — so the two documents recorded as hits
+  were accepted on CONTENT, not status: both return application/json, parse as JSON objects,
+  and carry the RFC 8414 / RFC 9728 required fields. Every HTML-shell 200 on that host is
+  recorded as a miss. No security.txt is served anywhere, so no SecurityTxt pointer is emitted.
+  docs.acelabusa.com/robots.txt additionally carries a Cloudflare Content Signals Policy line
+  (ai-train=yes, search=yes, ai-input=yes); it is wired as a ContentSignal link pointer in
+  apis.yml rather than saved here, because robots.txt is not a /.well-known/ document.
+hit_count: 2
+path_echo_control: html-catch-all-on-docs-host
+hosts:
+- host: https://www.acelabusa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /.well-known/acelab-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://acelabusa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /.well-known/acelab-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://api.acelabusa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /.well-known/acelab-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://app.acelabusa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /.well-known/acelab-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://docs.acelabusa.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: acelab-oauth-authorization-server.json
+    content_type: application/json
+    note: >-
+      RFC 8414 authorization server metadata for the docs MCP server. issuer
+      https://docs.acelabusa.com/mcp/oauth, PKCE S256, dynamic client registration
+      (RFC 7591), scopes_supported [mcp:search].
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: acelab-oauth-protected-resource.json
+    content_type: application/json
+    note: >-
+      RFC 9728 protected resource metadata. resource https://docs.acelabusa.com,
+      authorization_servers [https://docs.acelabusa.com/mcp/oauth].
+  - path: /.well-known/security.txt
+    status: 200
+    note: HTML shell, not a document — same body the negative control returns. Recorded as a miss.
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: HTML shell, not a document. Recorded as a miss.
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: HTML shell, not a document. Recorded as a miss.
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: HTML shell, not an AgentCard. Recorded as a miss; no AgentCard pointer emitted.
+  - path: /.well-known/agent.json
+    status: 200
+    note: HTML shell, not an AgentCard. Recorded as a miss.
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    note: HTML shell; no issuer/jwks_uri. Recorded as a miss.
+  - path: /.well-known/apis.json
+    status: 200
+    note: HTML shell; no apis/specificationVersion keys. Recorded as a miss.
+  - path: /apis.json
+    status: 200
+    note: HTML shell. Recorded as a miss.
+  - path: /apis.yml
+    status: 200
+    note: HTML shell. Recorded as a miss.
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    file: ../llms/acelab-llms.txt
+    note: >-
+      Real llms.txt, 6,386 bytes, Acelab-titled, indexing the AECO Help Center (127 pages),
+      Learning Hub (82 pages), Webinars (248 pages) and the Partner Help Center. Saved under
+      llms/ and wired as type LLMsTxt.
+  - path: /.well-known/acelab-negative-control-7f3ab91c.json
+    status: 200
+    control: true
+    result: failed
+    note: >-
+      A path that cannot exist returns 200 text/html — this host is an SPA catch-all for HTML
+      requests. Every HTML-bodied 200 above is therefore discarded; only the two
+      application/json documents and the text/plain llms.txt are counted.

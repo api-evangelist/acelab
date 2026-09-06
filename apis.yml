@@ -1,18 +1,79 @@
 aid: acelab
 name: Acelab
-description: 'Acelab is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Acelab is a Brooklyn, New York software company building Material Hub,
+  an AI-assisted material intelligence platform for the architecture, engineering,
+  construction and owner (AECO) market. Founded in 2019 by architecture graduates from
+  Harvard and MIT, the platform lets architects, designers, owners and manufacturer
+  partners research, compare, specify, document and track building products across a
+  database of more than 200,000 items, with SpecPlanner, Smart Docs, schedules,
+  sustainability conformance and vendor management on top. Its marquee integration is a
+  bi-directional Autodesk Revit add-in that syncs materials, families, keynotes and
+  schedules between the model and the Material Hub library; ACC360, Procore, SharePoint
+  and "custom API" integrations are sold only on the Enterprise tier. Acelab does not
+  publish a public developer program: the production platform API answers Bearer-token
+  challenges and its Swagger surface is protected by HTTP Basic auth, while the only
+  anonymously reachable machine surface is a documentation-search MCP server on the
+  docs host.'
 url: https://raw.githubusercontent.com/api-evangelist/acelab/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/69975a27432ddb9dcf949f22/69a700a421be3d2a922e2752_acelab%20logo%20black.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: 'enrichment pass 2026-09-06: full STEP 0b contract discovery run; production Swagger found but HTTP-Basic gated, live docs MCP server and llms.txt captured'
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
-apis: []
+- Construction
+- Architecture
+- Building Materials
+- Design
+- Sustainability
+- Product Data
+- AECO
+- Revit
+- Specification
+position: Producing
+apis:
+- name: Acelab Material Hub Platform API
+  description: 'The private production API behind the Acelab Material Hub web application
+    and Revit add-in. It is not a published developer product: no OpenAPI, no API
+    reference and no key-issuance flow is published anywhere on acelabusa.com, and
+    "Custom API Integrations" are listed as an Enterprise-tier, sales-gated item on the
+    pricing page. The base URL recorded here is the one Acelab''s own Nuxt application
+    at app.acelabusa.com calls at runtime; requests to it answer 401 with
+    WWW-Authenticate: Bearer, and the ASP.NET Swagger surface at /swagger/v1/swagger.json
+    answers 401 with WWW-Authenticate: Basic — the machine-readable contract exists but
+    is behind an access control.'
+  humanURL: https://www.acelabusa.com/pricing/architect-designers
+  baseURL: https://acelab-api-prod-178528813198.us-east4.run.app/api
+  tags:
+  - Building Materials
+  - Product Data
+  - Specification
+  properties:
+  - type: Authentication
+    url: authentication/acelab-authentication.yml
+- name: Acelab Documentation MCP Server
+  description: 'A remote, anonymously reachable Model Context Protocol server serving
+    search and retrieval over Acelab''s public documentation and webinar library. It is
+    provided by the Mintlify documentation platform on Acelab''s own docs host, advertises
+    serverInfo.name "Acelab", and exposes three tools (search_acelab,
+    query_docs_filesystem_acelab, submit_feedback). RFC 8414 and RFC 9728 discovery
+    documents on the same host describe an optional OAuth authorization server with a
+    single mcp:search scope; tools/list succeeds without any credential.'
+  humanURL: https://docs.acelabusa.com/help-center
+  baseURL: https://docs.acelabusa.com/mcp
+  tags:
+  - MCP
+  - Documentation
+  - Search
+  properties:
+  - type: MCPServer
+    url: mcp/acelab-mcp.yml
+  - type: OAuthScopes
+    url: scopes/acelab-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +81,55 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.acelabusa.com/
+- type: Documentation
+  url: https://docs.acelabusa.com/help-center
+- type: GettingStarted
+  url: https://docs.acelabusa.com/partner-help-center/getting-started/index
+- type: Support
+  url: https://www.acelabusa.com/contact
+- type: Blog
+  url: https://www.acelabusa.com/resources
+- type: ChangeLog
+  url: https://www.acelabusa.com/resources?type_equal=New+Features
+- type: GitHubOrganization
+  url: https://github.com/acelab-usa
+- type: Pricing
+  url: https://www.acelabusa.com/pricing/architect-designers
+- type: SignUp
+  url: https://app.acelabusa.com/signup
+- type: Login
+  url: https://app.acelabusa.com/login
+- type: TermsOfService
+  url: https://www.acelabusa.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.acelabusa.com/privacy-policy
+- type: ContentSignal
+  url: https://docs.acelabusa.com/robots.txt
+- type: LLMsTxt
+  url: llms/acelab-llms.txt
+- type: WellKnown
+  url: well-known/acelab-well-known.yml
+- type: MCPServer
+  url: mcp/acelab-mcp.yml
+- type: Authentication
+  url: authentication/acelab-authentication.yml
+- type: OAuthScopes
+  url: scopes/acelab-scopes.yml
+- type: Conformance
+  url: conformance/acelab-conformance.yml
+- type: Packages
+  url: packages/acelab-packages.yml
+- type: Plans
+  url: plans/acelab-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/acelab-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/acelab-lifecycle.yml
+- type: DomainSecurity
+  url: security/acelab-domain-security.yml
+x-enrichment:
+  date: '2026-09-06'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v3

@@ -2,25 +2,27 @@ generated: '2026-09-06'
 method: probed
 source: https://docs.acelabusa.com/mcp
 status: live
-note: >-
-  Acelab operates one anonymously reachable MCP server, on its documentation host. It was found
-  from the RFC 8414 / RFC 9728 discovery documents at docs.acelabusa.com and confirmed by an
-  unauthenticated initialize + tools/list round trip on 2026-09-06 (HTTP 200, text/event-stream).
-  The server reports serverInfo {"name":"Acelab","version":"1.0.0"} and protocolVersion
-  2025-06-18. It is provided by the Mintlify documentation platform rather than authored by
-  Acelab (x-matched-path /_mintlify/mcp/auth/[subdomain]/[transport]), so the tool set is the
-  platform's generic docs-search trio, not an Acelab product API. It is recorded because it is
-  real, live, on Acelab's own host, and callable by an agent today. Acelab's actual product API
-  is NOT exposed over MCP by Acelab; see unofficial_servers below.
+note: Acelab operates one anonymously reachable MCP server, on its documentation host. It was found from
+  the RFC 8414 / RFC 9728 discovery documents at docs.acelabusa.com and confirmed by an unauthenticated
+  initialize + tools/list round trip on 2026-09-06 (HTTP 200, text/event-stream). The server reports serverInfo
+  {"name":"Acelab","version":"1.0.0"} and protocolVersion 2025-06-18. It is provided by the Mintlify documentation
+  platform rather than authored by Acelab (x-matched-path /_mintlify/mcp/auth/[subdomain]/[transport]),
+  so the tool set is the platform's generic docs-search trio, not an Acelab product API. It is recorded
+  because it is real, live, on Acelab's own host, and callable by an agent today. Acelab's actual product
+  API is NOT exposed over MCP by Acelab; see unofficial_servers below.
 deployment:
   mode: remote
   endpoint: https://docs.acelabusa.com/mcp
   auth: none
   verified: probed
-  note: >-
-    tools/list succeeds with no credential. An OPTIONAL OAuth path is advertised
-    (authorization server https://docs.acelabusa.com/mcp/oauth, scope mcp:search, PKCE S256,
-    dynamic client registration) and is required only for authenticated/private docs content.
+  note: tools/list succeeds with no credential. An OPTIONAL OAuth path is advertised (authorization server
+    https://docs.acelabusa.com/mcp/oauth, scope mcp:search, PKCE S256, dynamic client registration) and
+    is required only for authenticated/private docs content.
+  probe_prior: (never probed)
+  probe: live
+  probe_why: live
+  checked: '2026-09-11'
+  source: claimed-backlog re-probe 2026-09-11
 transport: streamable-http
 protocol_version: '2025-06-18'
 server_info:
@@ -31,9 +33,8 @@ tool_count: 3
 tools:
 - name: search_acelab
   title: Search documentation
-  description: >-
-    Search across the Acelab knowledge base to find relevant information, guides and
-    documentation pages; returns contextual content with titles and direct links.
+  description: Search across the Acelab knowledge base to find relevant information, guides and documentation
+    pages; returns contextual content with titles and direct links.
   input_schema:
     query: string (required)
   annotations:
@@ -42,10 +43,9 @@ tools:
     idempotentHint: true
     openWorldHint: false
 - name: query_docs_filesystem_acelab
-  description: >-
-    Read-only shell-like query (rg, grep, find, tree, ls, cat, head) against a virtualized
-    in-memory filesystem containing only the Acelab documentation pages. This is how a page is
-    read — pass its .mdx path to head or cat.
+  description: Read-only shell-like query (rg, grep, find, tree, ls, cat, head) against a virtualized
+    in-memory filesystem containing only the Acelab documentation pages. This is how a page is read —
+    pass its .mdx path to head or cat.
   input_schema:
     command: string (required)
   annotations:
@@ -75,15 +75,13 @@ unofficial_servers:
   install: npx acelab-mcp-architect
   auth: api-key
   verified: searched
-  note: >-
-    A stdio MCP server wrapping "the AceLab API" (search_products, create_project, get_project,
-    get_my_projects, get_spec_planner, add_product_to_spec_planner, create_metric_value),
-    published by npm user "mayankacelab". It is NOT marked official here: its package.json
-    repository and homepage are the unfilled template github.com/your-username/..., it is not
-    linked from any acelabusa.com property, and its documented default base URL
-    https://api.acelab.com is a domain Acelab does not control (acelab.com belongs to an
-    unrelated Mexican 3D-printing company, ACELAB x MakerMex). Its existence is corroborating
-    evidence that Acelab runs a bearer-token product API, not evidence of a published one.
+  note: 'A stdio MCP server wrapping "the AceLab API" (search_products, create_project, get_project, get_my_projects,
+    get_spec_planner, add_product_to_spec_planner, create_metric_value), published by npm user "mayankacelab".
+    It is NOT marked official here: its package.json repository and homepage are the unfilled template
+    github.com/your-username/..., it is not linked from any acelabusa.com property, and its documented
+    default base URL https://api.acelab.com is a domain Acelab does not control (acelab.com belongs to
+    an unrelated Mexican 3D-printing company, ACELAB x MakerMex). Its existence is corroborating evidence
+    that Acelab runs a bearer-token product API, not evidence of a published one.'
 x-evidence:
 - url: https://docs.acelabusa.com/.well-known/oauth-protected-resource
   http_status: 200

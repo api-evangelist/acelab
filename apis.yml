@@ -23,6 +23,9 @@ x-tier-reason: 'enrichment pass 2026-09-06: full STEP 0b contract discovery run;
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
+x-docs-platform: mintlify
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-17
 tags:
 - Company
 - Construction

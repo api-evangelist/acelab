@@ -86,3 +86,29 @@ other_pricing_pages:
 - audience: owners-developers
   url: https://www.acelabusa.com/pricing/owners-developers
   status: 200
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: Starter
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Material Hub Pro
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Material Hub Enterprise
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []

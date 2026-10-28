@@ -64,5 +64,119 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Acelab is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Acelab is a Brooklyn, New York software company building Material Hub, an AI-assisted material intelligence platform for the architecture, engineering, construction and owner (AECO) market. Founded in 2019 by architecture graduates from Harvard and MIT, the platform lets architects, designers, owners and manufacturer partners research, compare, specify, document and track building products across a database of more than 200,000 items, with SpecPlanner, Smart Docs, schedules, sustainability conformance and vendor management on top. Its marquee integration is a bi-directional Autodesk Revit add-in that syncs materials, families, keynotes and schedules between the model and the Material Hub library; ACC360, Procore, SharePoint and "custom API" integrations are sold only on the Enterprise tier. Acelab does not publish a public developer program: the production platform API answers Bearer-token challenges and its Swagger surface is protected by HTTP Basic auth, while the only anonymously reachable machine surface is a documentation-search MCP server on the docs host.
+
+**Areas:** Company · Construction · Architecture · Building Materials · Design · Sustainability · Product Data · AECO · Revit · Specification
+
+## Acelab on APIs.io
+
+Everything profiled for Acelab is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/acelab/](https://apis.io/providers/acelab/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Acelab Material Hub Platform API](https://apis.io/apis/acelab/acelab-material-hub-platform-api/) — The private production API behind the Acelab Material Hub web application and Revit add-in. It is not a published developer product: no OpenAPI, no API…
+- [Acelab Documentation MCP Server](https://apis.io/apis/acelab/acelab-documentation-mcp-server/) — A remote, anonymously reachable Model Context Protocol server serving search and retrieval over Acelab's public documentation and webinar library. It is…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [acelab-mcp.yml](https://apis.io/servers/acelab/acelab-mcp-yml/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Acelab Authentication](https://apis.io/security/acelab/acelab-authentication/)
+- [Acelab Domain Security](https://apis.io/security/acelab/acelab-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Acelab Scopes](https://apis.io/scopes/acelab/acelab-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Acelab Plans Pricing](https://apis.io/plans/acelab/acelab-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Acelab Rate Limits](https://apis.io/rate-limits/acelab/acelab-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.acelabusa.com/)
+- [Documentation](https://docs.acelabusa.com/help-center)
+- [Getting started](https://docs.acelabusa.com/partner-help-center/getting-started/index)
+- [Pricing](https://www.acelabusa.com/pricing/architect-designers)
+- [Sign up](https://app.acelabusa.com/signup)
+- [Support](https://www.acelabusa.com/contact)
+- [Changelog](https://www.acelabusa.com/resources?type_equal=New+Features)
+- [Blog](https://www.acelabusa.com/resources)
+- [Terms of service](https://www.acelabusa.com/terms-of-use)
+- [Privacy policy](https://www.acelabusa.com/privacy-policy)
+- [GitHub](https://github.com/acelab-usa)
+
+## API Evangelist rating
+
+**Kin Score 38.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 76.3 |
+
+**Agent readiness 25.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | yes |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/acelab/](https://apis.io/providers/acelab/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Acelab: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/acelab/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).

@@ -130,18 +130,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 38.3** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 37.6** — thin · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 75.0 |
 | Contract quality | 0.0 |
 | Contract governance | 18.2 |
-| Operational transparency | 18.4 |
+| Operational transparency | 19.0 |
 | Developer ergonomics | 40.5 |
-| Access clarity | 76.3 |
+| Access clarity | 76.6 |
 
-**Agent readiness 25.5** — agent-aware
+**Agent readiness 23.4** — agent-aware
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -157,15 +157,21 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Event Surface Described | — |
 | Agent Skills | — |
 | Well Known Catalog | — |
-| Consent Identity | yes |
+| Consent Identity | — |
 | Agent Card | — |
 | Dry Run Mode | — |
 | Delegated Identity | served (partial credit) |
 | Protected Resource Metadata | verified |
 | Dynamic Client Registration | yes |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | yes |
 
-**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+**Regulatory alignment 28.4** — Horizontal (data, software, accessibility, platform)
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/acelab/](https://apis.io/providers/acelab/).
 
